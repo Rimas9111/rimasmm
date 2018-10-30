@@ -1,0 +1,221 @@
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.container1 {
+    background-image: url(./images/bg-masthead.jpg);
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.container-middle {
+    text-align: center;
+    /* align-self: center; */
+    margin: 0px auto;
+}
+
+.container1 h1 {
+    font-size: 80px;
+}
+
+.btn-custom {
+    margin: 30px 10px 0px;
+    color: white;
+    font-size: 18px;
+    height: 66px;
+    width: 182px;
+}
+
+.container2 {
+    height: 430px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.container2 h1 {
+    font-size: 30px;
+}
+
+.container2 h2 {
+    font-size: 17px;
+}
+
+.container3 {
+    padding: 130px 0px;
+    background-color: #1D809F;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.services-text {
+    margin-bottom: 40px;
+}
+
+.services-text h1{
+    font-size: 50px;
+}
+
+.services-text h2{
+    font-size: 12px;
+}
+
+
+.services-list {
+    text-align: center;
+}
+
+.services-list h1{
+    font-size: 26px;
+}
+
+.services-list h2{
+    font-size: 14px;
+}
+
+
+.icon {
+    height: 120px;
+    width: 120px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    margin: 0px auto;
+    color: #1D809F;
+    font-size: 70px;
+}
+
+.container-fluid2 {
+    background-image: url(./images/bg-callout.jpg);
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.container-middle2 {
+    text-align: center;
+    margin: 100px auto 0px;
+}
+
+.container4 {
+    padding-bottom: 120px;
+}
+
+.cont-portfolio1 {
+    width: 560px;
+    height: 370px;
+    background-image: url(./images/portfolio-1.jpg);
+    background-size: auto;
+}
+
+.cont-portfolio2 {
+    width: 560px;
+    height: 370px;
+    background-image: url(./images/portfolio-2.jpg);
+    color: #ffffff;
+    background-size: auto;
+}
+
+.cont-portfolio3 {
+    width: 560px;
+    height: 370px;
+    background-image: url(./images/portfolio-3.jpg);
+    color: #ffffff;
+    background-size: auto;
+}
+
+.cont-portfolio4 {
+    width: 560px;
+    height: 370px;
+    background-image: url(./images/portfolio-4.jpg);
+    color: #ffffff;
+    background-size: auto;
+}
+
+.p-text {
+    color: #ffffff;
+    margin: 230px 40px;
+}
+
+.container5 {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+
+.icon2 {
+    background-color: #1D809F;
+    border-radius: 50%;
+	width: 80px;
+    height: 80px;
+    margin: 10 auto;
+    padding: 25; 
+    font-size: 50px;
+    color: #ffffff;
+    margin: 20px;
+}
+
+.bottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.copyright {
+    font-size: 10px;
+    color: black;
+    /* text-align: center; */
+    padding: 40px
+}
+
+.fa-bars {
+    font-size: 40px;
+
+}
+.burger {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    right: 25px;
+    top: 25px;
+    background-color: #29596B;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu {
+    position: fixed;
+    right: 0px;
+    height: 100vh;
+    max-width: 0px;
+    background-color: #1D809F;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    z-index: 200;
+    transition: 1s ease;
+}
+
+.menu.hidden {
+    max-width: 300px;
+    transition: 1s ease;
+}
+
+.menu-text {
+    padding: 30px 80px 20px 20px;
+}
