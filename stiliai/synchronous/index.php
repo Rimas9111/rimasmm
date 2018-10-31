@@ -22,51 +22,54 @@
 					
 					<!-- Logo -->
 					<div id="logo">
-						<h1><a href="#">Synchronous</a></h1>
-						<span>Design by TEMPLATED</span>
-					</div>
+					<h1><a href="<?php echo adresas(); ?>">
+						<?php echo input( strip_tags( $conf['Pavadinimas'] )); ?>
+					</a></h1>
+					<span>
+						<?php echo $conf['Apie']; ?>
+					</span>
+				</div>
 					
 					<!-- Nav -->
-					<nav id="nav">
-						<ul>
-							<li class="active"><a href="index.html">Homepage</a></li>
-							<li><a href="threecolumn.html">Three Column</a></li>
-							<li><a href="twocolumn1.html">Left Sidebar</a></li>
-							<li><a href="twocolumn2.html">Right Sidebar</a></li>
-							<li><a href="onecolumn.html">No Sidebar</a></li>
-						</ul>
-					</nav>
-				</div>
+				<nav id="nav">
+					<ul>
+						<?php
+							$limit = 6; //Kiek nuorodų rodome
+							$menuSql  = mysql_query1( "SELECT * FROM `" . LENTELES_PRIESAGA . "page` WHERE `parent` = 0 AND `show` = 'Y' AND `lang` = " . escape(lang()) . " ORDER BY `place` ASC LIMIT " . $limit );
+						?>
+						<?php foreach ($menuSql as $menuRow) { ?>
+							<?php if (teises( $menuRow['teises'], $_SESSION[SLAPTAS]['level'])){ ?>
+								<li>
+									<a href="<?php echo url('?id,' . (int)$menuRow['id']); ?>">
+										<?php echo input($menuRow['pavadinimas']); ?>
+									</a>
+								</li>
+							<?php } ?>
+						<?php } ?>
+					</ul>
+				</nav>
 			</div>
+		</div>
 			<!-- /Header -->
 			
 			<div id="page">
 				<div class="container">
 					<div class="row">
 						<div class="3u">
-							<section id="sidebar1">
-								<header>
-									<h2>pavadinimas 1</h2>
-								</header>
-								tekstas
-							</section>
+							<?php include ( "priedai/kaires_blokai.php" ); ?>
 						</div>
 						<div class="6u skel-cell-important">
-							<section id="content" >
-								<header>
-									<h2>Lorem Ipsum Dolor</h2>
-								</header>
-								Aliquam erat volutpat. Pellentesque tristique ante ut risus. Quisque dictum. Integer nisl risus, sagittis convallis, rutrum id, elementum congue, nibh. Suspendisse dictum porta lectus. Donec placerat odio vel elit. Nullam ante orci, pellentesque eget, tempus quis, ultrices in, est. Curabitur sit amet nulla. Nam in massa. Sed vel tellus. Curabitur sem urna, consequat vel, suscipit in, mattis placerat, nulla. Sed ac leo.
-								<a href="#" class="button">Straipsnis</a>
-							</section>
+							<?php
+								if ( isset( $strError ) && !empty( $strError ) ) {
+									klaida( "Klaida", $strError );
+								}
+								
+								include ( "priedai/centro_blokai.php" );
+								include ( $page . ".php" );
+							?>
 						</div>
 						<div class="3u">
-							<section id="sidebard2">
-								<header>
-									<h2>pavadinimas 2</h2>
-								</header>
-									tekstas
-							</section>
+							<?php include ( "priedai/desines_blokai.php" ); ?>
 						</div>
 					</div>
 

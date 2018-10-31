@@ -76,13 +76,17 @@ function lentele_c( $pavadinimas, $tekstas, $n_nuoroda, $kom_kiekis = FALSE, $da
 
 //Centrinės pozicijos blokai
 function lentele( $pavadinimas, $tekstas, $reitingai = FALSE ) {
-
-	echo "<div class='pavadinimas'>{$pavadinimas}</div>
-    <div class='vidus'>
-	<div class='text'>{$reitingai}{$tekstas}</div>
-	</div>";
+	?>
+    <section>
+        <header>
+            <h2>
+                <?php echo $pavadinimas; ?>
+            </h2>
+        </header>
+        <?php echo $reitingai . $tekstas; ?>
+    </section>
+<?php
 }
-
 //Atvaizduojame klaidos pranešimą
 function klaida( $pavadinimas, $tekstas, $label = FALSE ) {
 
