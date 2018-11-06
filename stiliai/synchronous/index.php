@@ -56,20 +56,44 @@
 				<div class="container">
 					<div class="row">
 						<div class="3u">
-							<?php include ( "priedai/kaires_blokai.php" ); ?>
+						<section id="box1">
+								<header>
+									<h2>Straipsniai</h2>
+								</header>
+								<ul class="style3">
+									<li class="first">
+										<p class="date"><a href="#">11.01</a></p>
+										<p><a href="#">Donec leo, vivamus fermentum nibh in augue praesent urna congue rutrum.</a></p>
+									</li>
+									<li>
+										<p class="date"><a href="#">11.06</a></p>
+										<p><a href="#">Donec leo, vivamus fermentum nibh in augue praesent urna congue rutrum.</a> </p>
+									</li>
+								</ul>
+							</section>
 						</div>
 						<div class="6u skel-cell-important">
-							<?php
-								if ( isset( $strError ) && !empty( $strError ) ) {
-									klaida( "Klaida", $strError );
-								}
-								
-								include ( "priedai/centro_blokai.php" );
-								include ( $page . ".php" );
-							?>
+							<section>
+								<header>
+									<h2>LOREM IPSUM DOLOR</h2>
+								</header>
+								<div> <a href="#" class="image full"><img src="images/pics02.jpg" alt=""></a> </div>
+								<p>This is Synchronous, a responsive HTML5 site template freebie by TEMPLATED. Released for free under the Creative Commons Attribution license, so use it for whatever (personal or commercial) – just give us credit! Check out more of our stuff at our site or follow us on Twitter.
+									Aliquam erat volutpat. Pellentesque tristique ante ut risus. Quisque dictum. Integer nisl risus, sagittis convallis, rutrum id, elementum congue, nibh. Suspendisse dictum porta lectus. Donec placerat odio vel elit. Nullam ante orci, pellentesque eget, tempus quis, ultrices in, est. Curabitur sit amet nulla. Nam in massa. Sed vel tellus. Curabitur sem urna, consequat vel, suscipit in, mattis placerat, nulla. Sed ac leo.
+									Sed etiam vestibulum velit mollis pretium suscipit, justo nulla blandit libero, in blandit augue justo quis nisl. Fusce mattis viverra elit. Fusce quis tortor. Consectetuer adipiscing elit. Nam pede erat, porta eu, lobortis eget lorem ipsum dolor.</p>
+							</section>
 						</div>
 						<div class="3u">
-							<?php include ( "priedai/desines_blokai.php" ); ?>
+							<section>
+								<header>
+									<h2>Text</h2>
+								</header>
+								<ul class="style1">
+									<li class="first"><a href="#">Maecenas luctus lectus at sapien</a></li>
+									<li><a href="#">Etiam rhoncus volutpat erat</a></li>
+									<li><a href="#">Donec dictum metus in sapien</a></li>
+								</ul>
+							</section>
 						</div>
 					</div>
 
