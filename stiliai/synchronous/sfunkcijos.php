@@ -75,16 +75,16 @@ function lentele_c( $pavadinimas, $tekstas, $n_nuoroda, $kom_kiekis = FALSE, $da
 		$skaitom = "<a href='{$n_nuoroda}'>{$lang['article']['read']}({$kom_kiekis})</a>";
 	}
 //Atvaizduojame
-	// echo "<div class='pavadinimas2' title='{$pavadinimas}'>" . trimlink( $pavadinimas, 65 ) . "</div>
-    // <div class='vidus'>
-	// <div class='text'>
-	// <div style='float:left;'>{$reitingai}</div>{$tekstas}
-	// <div class='line'></div>
-	// <b>{$lang['article']['author']}:</b> {$autorius}
-	// <b>{$lang['article']['date']}:</b> {$data}
-	// <span class='read_more' style='float:right;display:block;'>{$skaitom}</span>
-	// </div>
-	// </div>";
+	?>
+	<section>
+		<header>
+			<h2>
+				<?php echo $pavadinimas; ?>
+			</h2>
+		</header>
+		<?php echo $tekstas . $skaitom; ?>
+	</section>
+	<?php
 }
 
 //Centrinės pozicijos blokai
