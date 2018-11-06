@@ -48,3 +48,15 @@ ErrorDocument 413 http://localhost:8081/rimasmm/mightmedia_cms-trunk/install//kl
 ErrorDocument 414 http://localhost:8081/rimasmm/mightmedia_cms-trunk/install//klaida.php
 ErrorDocument 500 http://localhost:8081/rimasmm/mightmedia_cms-trunk/install//klaida.php
 ErrorDocument 501 http://localhost:8081/rimasmm/mightmedia_cms-trunk/install//klaida.php
+
+ErrorDocument 404 http://localhost/rimasmm/install//klaida.php
+ErrorDocument 400 http://localhost/rimasmm/install//klaida.php
+ErrorDocument 401 http://localhost/rimasmm/install//klaida.php
+ErrorDocument 403 http://localhost/rimasmm/install//klaida.php
+ErrorDocument 405 http://localhost/rimasmm/install//klaida.php
+ErrorDocument 406 http://localhost/rimasmm/install//klaida.php
+ErrorDocument 409 http://localhost/rimasmm/install//klaida.php
+ErrorDocument 413 http://localhost/rimasmm/install//klaida.php
+ErrorDocument 414 http://localhost/rimasmm/install//klaida.php
+ErrorDocument 500 http://localhost/rimasmm/install//klaida.php
+ErrorDocument 501 http://localhost/rimasmm/install//klaida.php
