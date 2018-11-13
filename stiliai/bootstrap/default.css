@@ -485,4 +485,16 @@ a.siust {
     font-size: 10px;
 }
 
+li a {
+    color: white;
+    font-size: 20px;
+}
+
+.buttonColor {
+    background-color: #1D809F;
+}
+
+.buttonColor2 {
+    background-color: #6b655c;
+}
 /* Mightmedia pagrindin�s stiliaus funkcijos */

@@ -18,35 +18,45 @@
     <section class="container1">
     <div class="menu">
         <div class="menu-text">
+        <nav id="nav">
+        <ul>
             <?php
-				$limit = 100; //Kiek nuorodų rodome
-				$menuSql  = mysql_query1( "SELECT * FROM `" . LENTELES_PRIESAGA . "page` WHERE `parent` = 0 AND `show` = 'Y' AND `lang` = " . escape(lang()) . " ORDER BY `place` ASC LIMIT " . $limit );
-			?>
-			<?php foreach ($menuSql as $menuRow) { ?>
-				<?php if (teises( $menuRow['teises'], $_SESSION[SLAPTAS]['level'])){ ?>
-					<li>
-						<a href="<?php echo url('?id,' . (int)$menuRow['id']); ?>">
-							<?php echo input($menuRow['pavadinimas']); ?>
-						</a>
-					</li>
-				<?php } ?>
-			<?php } ?>
+                $limit = 10; //Kiek nuorodų rodome
+                $menuSql  = mysql_query1( "SELECT * FROM `" . LENTELES_PRIESAGA . "page` WHERE `parent` = 0 AND `show` = 'Y' AND `lang` = " . escape(lang()) . " ORDER BY `place` ASC LIMIT " . $limit );
+            ?>
+            <?php foreach ($menuSql as $menuRow) { ?>
+                <?php if (teises( $menuRow['teises'], $_SESSION[SLAPTAS]['level'])){ ?>
+                    <li>
+                        <a href="<?php echo url('?id,' . (int)$menuRow['id']); ?>">
+                            <?php echo input($menuRow['pavadinimas']); ?>
+                        </a>
+                    </li>
+                <?php } ?>
+            <?php } ?>
+        </ul>
+        </nav>
         </div>
         <div class="burger">
         <i class="fas fa-bars"></i>
         </div>
     </div>
+    <?php
+    if ($page != 'puslapiai/naujienos') {
+        include "priedai/centro_blokai.php";
+		include ( $page . ".php" );
+    } else {
+    ?>
         <div class="container-middle">
             <h1>Stylish Portfolio</h1>
             <h4>A Free Bootstrap Theme by Start Bootstrap</h4>
-            <button type="button" class="btn btn-custom">Find Out More</button>
+            <button type="button" class="btn btn-custom buttonColor">Find Out More</button>
         </div>
     </section>
     <section class="container2">
         <div class="container-middle">
             <h1>Stylish Portfolio is the perfect theme for you next project!</h1>
             <h2>This theme featuret a flexible, UX friendly sidebar menu and stock photos from our friends Unsplash!</h2>
-            <button type="button" class="btn btn-custom">What We Offer</button>   
+            <button type="button" class="btn btn-custom buttonColor">What We Offer</button>   
         </div>
     </section>
     <section class="container3">
@@ -92,7 +102,7 @@
     <section class="container-fluid2">
         <div class="container-middle2">
             <h1>Welcome to your next website</h1>
-            <button type="button" class="btn btn-custom">Download Now!</button>
+            <button type="button" class="btn btn-custom buttonColor">Download Now!</button>
         </div>
     </section>
     <section class="container4">
@@ -134,8 +144,8 @@
     <section class="container3">
     <div class="container-fluid">
         <h3>The buttons below are impossible to resist...</h3>
-        <button type="button" class="btn btn-custom">Click Me!</button>
-        <button type="button" class="btn btn-custom">Look At Me!</button>
+        <button type="button" class="btn btn-custom buttonColor2">Click Me!</button>
+        <button type="button" class="btn btn-custom buttonColor2">Look At Me!</button>
     </div>
     </section>
     <section>
@@ -151,6 +161,6 @@
     <!-- </div> -->
        <div class="copyright">Copyright <i class="far fa-copyright"></i> Your Website 2018</div>
 </section>
-
+    <?php } ?>
 </body>
 </html>
