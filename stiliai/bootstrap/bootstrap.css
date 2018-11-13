@@ -198,6 +198,10 @@ body {
     align-items: center;
 }
 
+.burger i {
+    cursor: pointer;
+}
+
 .menu {
     position: fixed;
     right: 0px;

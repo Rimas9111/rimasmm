@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <?php header_info();?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -8,19 +9,28 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="bootstrap.css">
-    <script src="bootstrapJS.js" async></script>
+    <link href='http://fonts.googleapis.com/css?family=Arimo:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="stiliai/bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="stiliai/<?php echo input(strip_tags($conf['Stilius'])); ?>/stiliai/bootstrap/default.css" />
+    <script src="stiliai/bootstrap/bootstrapJS.js" async></script>
 </head>
 <body>
     <section class="container1">
     <div class="menu">
         <div class="menu-text">
-            <h3>Start Bootstrap</h3>
-            <h4>Home</h4>
-            <h4>About</h4>
-            <h4>Services</h4>
-            <h4>Portfolio</h4>
-            <h4>Contact</h4>
+            <?php
+				$limit = 100; //Kiek nuorodų rodome
+				$menuSql  = mysql_query1( "SELECT * FROM `" . LENTELES_PRIESAGA . "page` WHERE `parent` = 0 AND `show` = 'Y' AND `lang` = " . escape(lang()) . " ORDER BY `place` ASC LIMIT " . $limit );
+			?>
+			<?php foreach ($menuSql as $menuRow) { ?>
+				<?php if (teises( $menuRow['teises'], $_SESSION[SLAPTAS]['level'])){ ?>
+					<li>
+						<a href="<?php echo url('?id,' . (int)$menuRow['id']); ?>">
+							<?php echo input($menuRow['pavadinimas']); ?>
+						</a>
+					</li>
+				<?php } ?>
+			<?php } ?>
         </div>
         <div class="burger">
         <i class="fas fa-bars"></i>

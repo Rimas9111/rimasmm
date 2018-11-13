@@ -46,6 +46,7 @@ if ( $kid == 0 ) {
 	if ( sizeof( $sql ) > 0 ) {
 		// var_dump('before');
 		?>
+		<!-- labas -->
 		<div id="featured">
 			<div class="title">
 				<h2>Naujienos</h2>
@@ -87,7 +88,7 @@ if ( $kid == 0 ) {
 						<li>
 							<p class="date"><?php echo(date('M', $data))?><b><?php echo(date('d', $data))?></b></a></p>
 							<h3><?php echo $row['pavadinimas']; ?></h3>
-							<p><a href="#"><?php echo strip_tags($row['naujiena']); ?></a></p>
+							<p><a href="<?php $n_nuoroda ?>"><?php echo strip_tags($row['naujiena']); ?></a></p>
 						</li>
 					<?php
 
