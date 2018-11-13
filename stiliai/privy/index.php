@@ -18,14 +18,8 @@ Released   : 20130902
 <meta name="keywords" content="" />
 <meta name="description" content="" />
 <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet" />
-<<<<<<< HEAD
-<link href="stiliai/privy/default.css" rel="stylesheet" type="text/css" media="all" />
-<link href="stiliai/privy/fonts.css" rel="stylesheet" type="text/css" media="all" />
-
-=======
 <link rel="stylesheet" href="stiliai/<?php echo input(strip_tags($conf['Stilius'])); ?>/stiliai/privy/default.css" />
 <link rel="stylesheet" href="stiliai/<?php echo input(strip_tags($conf['Stilius'])); ?>/stiliai/privy/fonts.css" />
->>>>>>> 0e2487dcc4f4b55c65b3bf7555a222b918faf25d
 <!--[if IE 6]><link href="default_ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
 
 </head>
@@ -34,15 +28,10 @@ Released   : 20130902
 	<div id="header">
 		<div id="logo">
 			<img src="stiliai/privy/images/pic02.jpg" alt="" />
-<<<<<<< HEAD
-			<h1><a href="#">Privy</a></h1>
-			<span>Design by <a href="http://templated.co" rel="nofollow">TEMPLATED</a></span>
-=======
 			<h1><a href="<?php echo adresas(); ?>">
 				<?php echo input( strip_tags( $conf['Pavadinimas'] )); ?>
 			</a></h1>
 			<span><?php echo $conf['Apie']; ?></span>
->>>>>>> 0e2487dcc4f4b55c65b3bf7555a222b918faf25d
 		</div>
 		<div id="menu">
 		<ul>
