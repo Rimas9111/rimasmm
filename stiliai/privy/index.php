@@ -17,8 +17,8 @@ Released   : 20130902
 <meta name="keywords" content="" />
 <meta name="description" content="" />
 <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet" />
-<link href="default.css" rel="stylesheet" type="text/css" media="all" />
-<link href="fonts.css" rel="stylesheet" type="text/css" media="all" />
+<link href="stiliai/privy/default.css" rel="stylesheet" type="text/css" media="all" />
+<link href="stiliai/privy/fonts.css" rel="stylesheet" type="text/css" media="all" />
 
 <!--[if IE 6]><link href="default_ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
 
@@ -27,7 +27,7 @@ Released   : 20130902
 <div id="page" class="container">
 	<div id="header">
 		<div id="logo">
-			<img src="images/pic02.jpg" alt="" />
+			<img src="stiliai/privy/images/pic02.jpg" alt="" />
 			<h1><a href="#">Privy</a></h1>
 			<span>Design by <a href="http://templated.co" rel="nofollow">TEMPLATED</a></span>
 		</div>
@@ -43,7 +43,7 @@ Released   : 20130902
 	</div>
 	<div id="main">
 		<div id="banner">
-			<img src="images/pic01.jpg" alt="" class="image-full" />
+			<img src="stiliai/privy/images/pic01.jpg" alt="" class="image-full" />
 		</div>
 		<div id="welcome">
 			<div class="title">
