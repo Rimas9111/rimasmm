@@ -117,7 +117,7 @@
 	ul.style1 li
 	{
 		padding: 1.6em 0em 0em 0em;
-		margin: 0 0 2.5em 0;
+		margin: 0 0 4em 0;
 		border-top: 1px solid rgba(0,0,0,.1); 
 	}
 	
@@ -195,10 +195,12 @@
 		margin-top: -5px;
 		font-size: 1.8em;
 		font-weight: 700;
+		color: #000;
 	}
 	
 	ul.style1 .date a
 	{
+		color: #000;
 	}
 	
 	ul.style1 .date a:hover

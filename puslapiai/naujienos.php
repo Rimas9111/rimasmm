@@ -44,9 +44,13 @@ if ( $kid == 0 ) {
 			LIMIT {$p},{$limit}", 100 );
 
 	if ( sizeof( $sql ) > 0 ) {
-		var_dump('before');
+		// var_dump('before');
 		?>
-		labas
+		<div id="featured">
+			<div class="title">
+				<h2>Naujienos</h2>
+			</div>
+			<ul class="style1">
 		<?php
 			foreach ( $sql as $row ) {
 				if ( isset( $conf['puslapiai']['naujienos.php']['id'] ) ) {
@@ -78,10 +82,13 @@ if ( $kid == 0 ) {
 					if ( $row['sticky'] != 0 ) {
 						echo '<div class="sticky" id="news_' . $row['id'] . '">';
 					}
-					var_dump(date('F d', $data));
+					// var_dump(date('F d', $data));
 					?>
-						sveikas
-						<?php echo $row['pavadinimas']; ?>
+						<li>
+							<p class="date"><?php echo(date('M', $data))?><b><?php echo(date('d', $data))?></b></a></p>
+							<h3><?php echo $row['pavadinimas']; ?></h3>
+							<p><a href="#"><?php echo strip_tags($row['naujiena']); ?></a></p>
+						</li>
 					<?php
 
 					// lentele_c( $row['pavadinimas'], '' . $pav . $row['naujiena'] . '', $n_nuoroda, $kiekis, $data, $autorius, rating_form( $page, $row['id'] ) );
@@ -92,9 +99,11 @@ if ( $kid == 0 ) {
 				}
 			}
 		?>
-		ate
+			</ul>
+		</div>
+		<!-- ate -->
 		<?php
-		var_dump('after');
+		// var_dump('after');
 	} else {
 		lentele( $lang['news']['news'], $lang['news']['nonews'] );
 	}
