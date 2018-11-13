@@ -12,14 +12,20 @@ Released   : 20130902
 -->
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+<?php header_info(); ?>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title></title>
 <meta name="keywords" content="" />
 <meta name="description" content="" />
 <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet" />
+<<<<<<< HEAD
 <link href="stiliai/privy/default.css" rel="stylesheet" type="text/css" media="all" />
 <link href="stiliai/privy/fonts.css" rel="stylesheet" type="text/css" media="all" />
 
+=======
+<link rel="stylesheet" href="stiliai/<?php echo input(strip_tags($conf['Stilius'])); ?>/stiliai/privy/default.css" />
+<link rel="stylesheet" href="stiliai/<?php echo input(strip_tags($conf['Stilius'])); ?>/stiliai/privy/fonts.css" />
+>>>>>>> 0e2487dcc4f4b55c65b3bf7555a222b918faf25d
 <!--[if IE 6]><link href="default_ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
 
 </head>
@@ -28,17 +34,33 @@ Released   : 20130902
 	<div id="header">
 		<div id="logo">
 			<img src="stiliai/privy/images/pic02.jpg" alt="" />
+<<<<<<< HEAD
 			<h1><a href="#">Privy</a></h1>
 			<span>Design by <a href="http://templated.co" rel="nofollow">TEMPLATED</a></span>
+=======
+			<h1><a href="<?php echo adresas(); ?>">
+				<?php echo input( strip_tags( $conf['Pavadinimas'] )); ?>
+			</a></h1>
+			<span><?php echo $conf['Apie']; ?></span>
+>>>>>>> 0e2487dcc4f4b55c65b3bf7555a222b918faf25d
 		</div>
 		<div id="menu">
-			<ul>
-				<li class="current_page_item"><a href="#" accesskey="1" title="">Homepage</a></li>
-				<li><a href="#" accesskey="2" title="">Our Clients</a></li>
-				<li><a href="#" accesskey="3" title="">About Us</a></li>
-				<li><a href="#" accesskey="4" title="">Careers</a></li>
-				<li><a href="#" accesskey="5" title="">Contact Us</a></li>
-			</ul>
+		<ul>
+			<?php
+				$limit = 5; //Kiek nuorodų rodome
+				$menuSql  = mysql_query1( "SELECT * FROM `" . LENTELES_PRIESAGA . "page` WHERE `parent` = 0 AND `show` = 'Y' AND `lang` = " . escape(lang()) . " ORDER BY `place` ASC LIMIT " . $limit );
+			?>
+			<?php foreach ($menuSql as $menuRow) { ?>
+				<?php if (teises( $menuRow['teises'], $_SESSION[SLAPTAS]['level'])){ ?>
+					<li>
+						<a href="<?php echo url('?id,' . (int)$menuRow['id']); ?>">
+							<?php echo input($menuRow['pavadinimas']); ?>
+						</a>
+					</li>
+				<?php } ?>
+			<?php } ?>
+			<div class="kaire"> <?php include "priedai/kaires_blokai.php"; ?> </div>
+		</ul>
 		</div>
 	</div>
 	<div id="main">
@@ -46,14 +68,8 @@ Released   : 20130902
 			<img src="stiliai/privy/images/pic01.jpg" alt="" class="image-full" />
 		</div>
 		<div id="welcome">
-			<div class="title">
-				<h2>Fusce ultrices fringilla metus</h2>
-				<span class="byline">Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue</span>
-			</div>
-			<p>This is <strong>Privy</strong>, a free, fully standards-compliant CSS template designed by <a href="http://templated.co" rel="nofollow">TEMPLATED</a>. The photos in this template are from <a href="http://fotogrph.com/"> Fotogrph</a>. This free template is released under the <a href="http://templated.co/license">Creative Commons Attribution</a> license, so you're pretty much free to do whatever you want with it (even use it commercially) provided you give us credit for it. Have fun :) </p>
-			<ul class="actions">
-				<li><a href="#" class="button">Etiam posuere</a></li>
-			</ul>
+		<?php include "priedai/centro_blokai.php";
+		include ( $page . ".php" ); ?>
 		</div>
 		<div id="featured">
 			<div class="title">
