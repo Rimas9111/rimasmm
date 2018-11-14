@@ -89,7 +89,7 @@ body {
     border-radius: 50%;
     margin: 0px auto;
     color: #1D809F;
-    font-size: 70px;
+    font-size: 80px;
 }
 
 .container-fluid2 {
@@ -162,7 +162,7 @@ body {
     height: 80px;
     margin: 10 auto;
     padding: 25; 
-    font-size: 50px;
+    font-size: 55px;
     color: #ffffff;
     margin: 20px;
 }
@@ -222,4 +222,9 @@ body {
 
 .menu-text {
     padding: 30px 80px 20px 20px;
+}
+
+.menu-text a {
+    color: white;
+    font-size: 20px;
 }

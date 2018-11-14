@@ -14,8 +14,8 @@
     <link rel="stylesheet" href="stiliai/<?php echo input(strip_tags($conf['Stilius'])); ?>/stiliai/bootstrap/default.css" />
     <script src="stiliai/bootstrap/bootstrapJS.js" async></script>
 </head>
-<body>
-    <section class="container1">
+<body> 
+<section class="container1"> 
     <div class="menu">
         <div class="menu-text">
         <nav id="nav">
@@ -41,11 +41,18 @@
         </div>
     </div>
     <?php
-    if ($page != 'puslapiai/naujienos') {
-        include "priedai/centro_blokai.php";
-		include ( $page . ".php" );
-    } else {
+        if ($page != 'puslapiai/naujienos') { 
     ?>
+    <div class="middle">
+        <?php 
+            include "priedai/centro_blokai.php";
+            include ( $page . ".php" ); 
+        ?>
+    </div>
+    <?php
+        } else {
+    ?>
+
         <div class="container-middle">
             <h1>Stylish Portfolio</h1>
             <h4>A Free Bootstrap Theme by Start Bootstrap</h4>
@@ -114,11 +121,9 @@
     </div>
     <div class="container">
         <div class="row">
+            <?php $sql = ("SELECT * FROM `yn_naujienos` ORDER BY data DESC"); ?>
             <article class="col-md-6 cont-portfolio1">
-                <div class="p-text">
-                <h6>STATIONARY</h6>
-                <h5>A yellow pencil with envelopes on a clean, blue backdrop!</h5>
-                </div>
+                <?php include ( $page . ".php" );  ?>
             </article>
             <article class="col-md-6 cont-portfolio2">
             <div class="p-text">
