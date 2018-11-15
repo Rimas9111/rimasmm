@@ -14,8 +14,10 @@ if ( !defined( "LEVEL" ) || LEVEL > 1 || !defined( "OK" ) ) {
 	redirect( 'location: http://' . $_SERVER["HTTP_HOST"] );
 }
 
+include 'functions/functions.blocks.php';
+
 if(BUTTONS_BLOCK) {
-	lentele($lang['admin']['blocks'], buttonsMenu($buttons['blocks']));
+	lentele($lang['admin']['blocks'], buttonsMenu(buttons('blocks')));
 }
 
 $text   = "";
@@ -118,9 +120,9 @@ if ( isset( $url['n'] ) && $url['n'] == 2 ) {
 	if (isset($_POST['action'])) {
 		$panel  = input( $_POST['Panel'] );
 		$rodyti = ! empty($_POST['rodyti']) ? input($_POST['rodyti']) : 'Ne';
-		$file   = ! empty($_POST['File']) ? input(basename($_POST['File'])) : null;
+		$file   = ! empty($_POST['File']) ? input($_POST['File']) : null;
 
-		if ( !file_exists( ROOT . "blokai/" . $file ) ) {
+		if ( ! file_exists(ROOT . $file)) {
 			notifyMsg(
 				[
 					'type'		=> 'error',
@@ -183,12 +185,15 @@ if ( isset( $url['n'] ) && $url['n'] == 2 ) {
 		}
 	}
 
-	$failai = getFiles( ROOT . 'blokai/' );
-	foreach ( $failai as $file ) {
-		if ( $file['type'] == 'file' ) {
+	$failai = getFiles(ROOT . 'blokai/');
+	//extensions
+	$failai = applyFilters('cmsBlocks', $failai);
+
+	foreach ($failai as $file) {
+		if ($file['type'] == 'file' ) {
 			$sql = mysql_query1( "SELECT `file` FROM `" . LENTELES_PRIESAGA . "panel` WHERE `file`=" . escape( basename( $file['name'] ) ) . " AND `lang` = " . escape( lang() ) . " LIMIT 1" );
-			if ( $sql['file'] != basename( $file['name'] ) ) {
-				$blokai[basename( $file['name'] )] = ( isset( $lang['blocks'][$file['name']] ) ? $lang['blocks'][$file['name']] : nice_name( basename( $file['name'], '.php' ) ) );
+			if ($sql['file'] != $file['name']) {
+				$blokai[$file['name']] = (isset( $lang['blocks'][$file['name']] ) ? $lang['blocks'][$file['name']] : nice_name( basename( $file['name'], '.php' ) ) );
 			}
 		}
 	}
@@ -389,18 +394,6 @@ HTML;
 		}
 	}
 } else {
-
-	function blockContent($data)
-	{
-		global $url, $lang;
-	
-		$content = '<a href="' . url( '?id,' . $url['id'] . ';a,' . $url['a'] . ';d,' . $data['id'] ) . '" style="align:right" onClick="return confirm(\'' . $lang['admin']['delete'] . '?\')"><img src="' . ROOT . 'images/icons/cross.png" title="' . $lang['admin']['delete'] . '" align="right" /></a>
-		<a href="' . url( '?id,' . $url['id'] . ';a,' . $url['a'] . ';r,' . $data['id'] ) . '" style="align:right"><img src="' . ROOT . 'images/icons/wrench.png" title="' . $lang['admin']['edit'] . '" align="right" /></a>
-		<a href="' . url( '?id,' . $url['id'] . ';a,' . $url['a'] . ';e,' . $data['id'] ) . '" style="align:right"><img src="' . ROOT . 'images/icons/pencil.png" title="' . $lang['admin']['panel_text'] . '" align="right" /></a>
-		' . $data['panel'];
-	
-		return $content;
-	}
 	
 	$liLeft		= "";
 	$liRight	= "";
@@ -464,6 +457,7 @@ HTML;
 			var serializedData = JSON.stringify($($this).nestable('serialize')),
 				data = {
 					action: 'blocksOrder',
+					action_functions: 'blocks',
 					order: serializedData
 				};
 

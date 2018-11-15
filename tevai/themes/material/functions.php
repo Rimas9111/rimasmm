@@ -399,27 +399,13 @@ function buttonsMenu($buttons)
 
 function adminIcon($group, $icon) 
 {
-	global $icons;
-
-	return '<img src="' . ROOT . $icons[$group][$icon] . '" alt="" class="middle">';
+	return '<img src="' . ROOT . icons($group, $icon) . '" alt="" class="middle">';
 }
 
-function adminMenuIcon($id) 
+function adminMenuIcon($icon) 
 {
-	global $icons;
-
-	return isset($icons['menu'][$id]) ? $icons['menu'][$id] : $icons['menu']['default'];
+	return ! empty(iconsMenu($icon)) ? iconsMenu($icon) : iconsMenu('default');
 }
-
-
-event('adminExtensionsPages', NULL, function($menu) {
-
-	$themeMenu = [
-		'aaa' => 'bbbb'
-	];
-	
-	return array_merge($menu, $themeMenu);
-});
 
 function dashTree($title, $content) 
 {
@@ -512,6 +498,29 @@ function notifyMsg($data) {
 			);
 		});
 	</script>
+	<?php
+}
+
+function notifyUpdate($versionData)
+{
+	global $url;
+
+	if(isset($url['m']) && $url['m'] == 'upgrade') {
+		return;
+	}
+	?>
+	<div class="alert alert-info alert---with-cta">
+		<div class="alert--info">
+			<i class="material-icons">info</i>
+			<strong>Jau laikas atsinaujinti!</strong>
+			Atnaujinkite savo sistemą iki <strong><?php echo $versionData['version']; ?></strong>
+		</div>
+		<div class="alert--cta">
+			<a href="<?php echo url("?id,999;m,upgrade"); ?>" class="btn btn-default waves-effect">
+				Atnaujinti
+			</a>
+		</div>
+	</div>
 	<?php
 }
 

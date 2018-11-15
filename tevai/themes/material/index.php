@@ -24,12 +24,14 @@ $user = getUserMail($_SESSION[SLAPTAS]['id']);
                 <div class="btn-group user-helper-dropdown">
                     <i class="material-icons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">keyboard_arrow_down</i>
                     <ul class="dropdown-menu pull-right">
-                        <li>
-                            <a href="<?php echo url( '?id,' . $conf['puslapiai']['view_user.php']['id'] . ';' . $user['nick'] ); ?>"><i class="material-icons">person</i><?php echo $lang['user']['user_profile']; ?></a>
-                        </li>
+                        <?php if(isset($conf['puslapiai']['view_user.php'])) { ?>
+                            <li>
+                                <a href="<?php echo url( '?id,' . $conf['puslapiai']['view_user.php']['id'] . ';' . $user['nick'] ); ?>"><i class="material-icons">person</i><?php echo $lang['user']['user_profile']; ?></a>
+                            </li>
+                        <?php } ?>
                         <li role="separator" class="divider"></li>
                         <li>
-                            <a href="<?php echo $lang['user']['logout']; ?>"><i class="material-icons">input</i><?php echo $lang['user']['logout']; ?></a>
+                            <a href="/<?php echo $lang['user']['logout']; ?>"><i class="material-icons">input</i><?php echo $lang['user']['logout']; ?></a>
                         </li>
                     </ul>
                 </div>
@@ -77,13 +79,13 @@ $user = getUserMail($_SESSION[SLAPTAS]['id']);
                             $linkValue = (isset( $lang['admin'][basename($file, '.php')] ) ? $lang['admin'][basename($file, '.php')] : nice_name($file));
                         ?>
                         <li <?php echo ( isset( $_GET['a'] ) && $_GET['a'] == $id ? 'class="active"' : '' ); ?>>
-                            <?php if(isset($buttons[$id]) && ! empty($buttons[$id])) { ?>
+                            <?php if(! empty(buttons($id))) { ?>
                                 <a href="javascript:void(0);" class="menu-toggle">
                                     <i class="material-icons"><?php echo adminMenuIcon($id); ?></i>
                                     <span><?php echo $linkValue; ?></span>
                                 </a>
                                 <ul class="ml-menu" id="sub-menu-admin">
-                                    <?php foreach($buttons[$id] as $button) { ?>
+                                    <?php foreach(buttons($id) as $button) { ?>
                                         <li>
                                             <a href="<?php echo $button['url']; ?>"><?php echo $button['value']; ?></a>
                                         </li>

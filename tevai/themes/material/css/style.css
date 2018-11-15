@@ -7720,7 +7720,7 @@ fieldset[disabled] .form-control {
 
 /* Login Page ================================== */
 .login-page {
-  background-color: #bdbdbd;
+  background-color: #e8e8e8;
   padding-left: 0;
   max-width: 360px;
   margin: 5% auto;
@@ -7745,7 +7745,7 @@ fieldset[disabled] .form-control {
       display: block;
       width: 100%;
       text-align: center;
-      color: #fff;
+      color: #555;
       margin-top: -5px; }
 
 /* Sign Up Page ================================ */
@@ -8066,4 +8066,27 @@ html.ie11 .bs-searchbox .form-control {
   color: #1858d0;
   font-size: 22px;
   vertical-align: middle;
+}
+
+.alert .material-icons {
+  vertical-align: middle;
+}
+
+.alert---with-cta {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (max-width: 425px) {
+  .alert---with-cta {
+    display: block;
+  }
+  .alert--cta {
+    margin-top: 5px;
+  }
+}
+
+.alert--info,
+.alert--cta {
+  align-self: center;
 }

@@ -1,14 +1,15 @@
 <?php
+$adminDir = basename(dirname(__DIR__));
 
 $adminMenu = [
-    'dashboard'     => 'dashboard.php',
-    'configuration' => 'configuration.php', 
-    'pages'         => 'meniu.php',
-    'blocks'        => 'blocks.php',
-    'news'          => 'naujienos.php',
-    'users'         => 'users.php', 
-    'bans'          => 'bans.php',
-    'logs'          => 'logs.php', 
+    'dashboard'     => $adminDir . '/pages/dashboard.php',
+    'configuration' => $adminDir . '/pages/configuration.php', 
+    'pages'         => $adminDir . '/pages/meniu.php',
+    'blocks'        => $adminDir . '/pages/blocks.php',
+    'news'          => $adminDir . '/pages/naujienos.php',
+    'users'         => $adminDir . '/pages/users.php', 
+    'bans'          => $adminDir . '/pages/bans.php',
+    'logs'          => $adminDir . '/pages/logs.php', 
 ];
 
 $adminExtensionsMenu = [
@@ -18,7 +19,7 @@ $adminExtensionsMenu = [
     // 'forum'     => 'frm.php',
     // 'gallery'   => 'galerija.php',
     // 'downloads' => 'siustis.php', 
-    'articles'  => 'straipsnis.php',
+    // 'articles'  => 'straipsnis.php',
     // 'pm'        => 'pm.php', 
     // 'chat'      => 'pokalbiai.php', 
 ];

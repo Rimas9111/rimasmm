@@ -74,34 +74,19 @@
             </div>
             <div class="services-list">
                 <div class="row">
-                    <article class="col-sm-3">
-                        <div class="icon">
-                            <i class="fas fa-mobile-alt"></i>
-                        </div>
-                        <h1>Responsive</h1>
-                        <h2>Looks great of any screen size!</h2>
-                    </article>
-                    <article class="col-sm-3">
-                        <div class="icon">
-                            <i class="fas fa-pencil-alt"></i>
-                        </div>
-                        <h1>Redesigned</h1>
-                        <h2>Freshly redesigned for Bootstrap 4.</h2>
-                    </article>
-                    <article class="col-sm-3">
-                        <div class="icon">
-                            <i class="far fa-thumbs-up"></i>
-                        </div>
-                        <h1>Favorited</h1>
-                        <h2>Millions of users Start Bootstrap!</h2>
-                    </article>
-                    <article class="col-sm-3">
-                        <div class="icon">
-                           <i class="fas fa-question"></i>
-                        </div>
-                        <h1>Question</h1>
-                        <h2>I mustache you a question</h2>
-                    </article>
+                    <?php 
+                    $str = mysql_query1("SELECT * FROM `yn_straipsniai` ORDER BY data DESC LIMIT 4;");
+                    foreach ($str as $key) {
+                    ?>
+                        <article class="col-sm-3">
+                            <div class="icon">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                            <h1> <?php echo $key['pav']; ?> </h1>
+                            <h2> <?php echo $key['t_text']; ?> </h2>
+                        </article>
+
+                    <?php } ?>
                 </div>
             </div>
         </div>
@@ -122,8 +107,8 @@
     <div class="container">
         <div class="row">
             <?php 
-                $str = mysql_query1("SELECT * FROM `yn_naujienos` ORDER BY data DESC LIMIT 4;");
-                foreach ($str as $key) {
+                $news = mysql_query1("SELECT * FROM `yn_naujienos` ORDER BY data DESC LIMIT 4;");
+                foreach ($news as $key) {
             ?>
                 <article class="col-md-6 cont-portfolio1">
                     <div class="p-text">
@@ -131,24 +116,6 @@
                         <h5> <?php echo $key['naujiena']; ?> </h5>
                     </div>
                 </article>
-                <!-- <article class="col-md-6 cont-portfolio2">
-                <div class="p-text">
-                    <h6>STATIONARY</h6>
-                    <h5>A yellow pencil with envelopes on a clean, blue backdrop!</h5>
-                </div>
-                </article>
-                <article class="col-md-6 cont-portfolio3">
-                <div class="p-text">
-                    <h6>STATIONARY</h6>
-                    <h5>A yellow pencil with envelopes on a clean, blue backdrop!</h5>
-                </div>
-                </article>
-                <article class="col-md-6 cont-portfolio4">
-                <div class="p-text">
-                    <h6>STATIONARY</h6>
-                    <h5>A yellow pencil with envelopes on a clean, blue backdrop!</h5>
-                </div>
-                </article> -->
             <?php } ?>
         </div>
     </div>
