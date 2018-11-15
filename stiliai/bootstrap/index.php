@@ -121,7 +121,10 @@
     </div>
     <div class="container">
         <div class="row">
-            <?php $sql = ("SELECT * FROM `yn_naujienos` ORDER BY data DESC"); ?>
+            <?php 
+                $str = mysql_query1("SELECT * FROM `yn_naujienos` ORDER BY data DESC LIMIT 3;");
+                foreach ($str as $key) {
+            ?>
             <article class="col-md-6 cont-portfolio1">
                 <?php include ( $page . ".php" );  ?>
             </article>
