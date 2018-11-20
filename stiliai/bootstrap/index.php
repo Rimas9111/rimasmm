@@ -82,8 +82,8 @@
                             <div class="icon">
                                 <i class="fas fa-mobile-alt"></i>
                             </div>
-                            <h1> <?php echo $key['pav']; ?> </h1>
-                            <h2> <?php echo $key['t_text']; ?> </h2>
+                            <h1> <?php echo strip_tags($key['pav']); ?> </h1>
+                            <h2> <?php echo strip_tags($key['t_text']); ?> </h2>
                         </article>
                      <?php } ?>
                 </div>
@@ -111,8 +111,8 @@
             ?>
                 <article class="col-md-6 cont-portfolio1">
                     <div class="p-text">
-                        <h6> <?php echo $key['pavadinimas']; ?> </h6>
-                        <h5> <?php echo $key['naujiena']; ?> </h5>
+                        <h6> <?php echo strip_tags($key['pavadinimas']); ?> </h6>
+                        <h5> <?php echo strip_tags($key['naujiena']); ?> </h5>
                     </div>
                 </article>
                 <!-- <article class="col-md-6 cont-portfolio2">
