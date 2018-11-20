@@ -74,8 +74,8 @@
             </div>
             <div class="services-list">
                 <div class="row">
-                    <?php 
-                    $str = mysql_query1("SELECT * FROM `yn_straipsniai` ORDER BY data DESC LIMIT 4;");
+                <?php 
+                    $str = mysql_query1("SELECT * FROM `2r_straipsniai` LIMIT 4;");
                     foreach ($str as $key) {
                     ?>
                         <article class="col-sm-3">
@@ -85,8 +85,7 @@
                             <h1> <?php echo $key['pav']; ?> </h1>
                             <h2> <?php echo $key['t_text']; ?> </h2>
                         </article>
-
-                    <?php } ?>
+                     <?php } ?>
                 </div>
             </div>
         </div>
@@ -107,7 +106,7 @@
     <div class="container">
         <div class="row">
             <?php 
-                $news = mysql_query1("SELECT * FROM `yn_naujienos` ORDER BY data DESC LIMIT 4;");
+                $news = mysql_query1("SELECT * FROM `2r_naujienos` ORDER BY data DESC LIMIT 4;");
                 foreach ($news as $key) {
             ?>
                 <article class="col-md-6 cont-portfolio1">
@@ -116,6 +115,24 @@
                         <h5> <?php echo $key['naujiena']; ?> </h5>
                     </div>
                 </article>
+                <!-- <article class="col-md-6 cont-portfolio2">
+                <div class="p-text">
+                    <h6>STATIONARY</h6>
+                    <h5>A yellow pencil with envelopes on a clean, blue backdrop!</h5>
+                </div>
+                </article>
+                <article class="col-md-6 cont-portfolio3">
+                <div class="p-text">
+                    <h6>STATIONARY</h6>
+                    <h5>A yellow pencil with envelopes on a clean, blue backdrop!</h5>
+                </div>
+                </article>
+                <article class="col-md-6 cont-portfolio4">
+                <div class="p-text">
+                    <h6>STATIONARY</h6>
+                    <h5>A yellow pencil with envelopes on a clean, blue backdrop!</h5>
+                </div>
+                </article> -->
             <?php } ?>
         </div>
     </div>
