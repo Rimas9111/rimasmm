@@ -75,7 +75,7 @@
             <div class="services-list">
                 <div class="row">
                 <?php 
-                    $str = mysql_query1("SELECT * FROM `2r_straipsniai` LIMIT 4;");
+                    $str = mysql_query1("SELECT * FROM `yn_straipsniai` ORDER BY date DESC LIMIT 4;");
                     foreach ($str as $key) {
                     ?>
                         <article class="col-sm-3">
@@ -106,7 +106,7 @@
     <div class="container">
         <div class="row">
             <?php 
-                $news = mysql_query1("SELECT * FROM `2r_naujienos` ORDER BY data DESC LIMIT 4;");
+                $news = mysql_query1("SELECT * FROM `yn_naujienos` ORDER BY data DESC LIMIT 4;");
                 foreach ($news as $key) {
             ?>
                 <article class="col-md-6 cont-portfolio1">
