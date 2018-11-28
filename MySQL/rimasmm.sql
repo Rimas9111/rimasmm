@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: 2018 m. Lap 20 d. 14:17
+-- Generation Time: 2018 m. Lap 28 d. 13:51
 -- Server version: 5.7.23
 -- PHP Version: 7.2.10
 
@@ -227,10 +227,11 @@ CREATE TABLE IF NOT EXISTS `2r_kas_prisijunges` (
 --
 
 INSERT INTO `2r_kas_prisijunges` (`id`, `uid`, `timestamp`, `ip`, `file`, `user`, `agent`, `ref`, `clicks`) VALUES
-(1, 'EmQx8ou9MO', 1542722749, '::1', 'install/klaida.php', 'rimas', 'User-Agent: \'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36\'', 'http://localhost/rimasmm/', 38),
-(1, 'OnFjXvR0zH', 1542722292, '::1', '', 'rimas', 'User-Agent: \'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36\'', 'Direct Link', 9),
-(1, 'RpgnBZbtiu', 1542722753, '::1', '', 'rimas', 'User-Agent: \'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36\'', 'Direct Link', 9),
-(1, '45mUyprsxq', 1542722301, '::1', '', 'rimas', 'User-Agent: \'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36\'', 'Direct Link', 52);
+(1, 'FzZmnskuQ5', 1542724647, '::1', '', 'rimas', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36', 'Direct Link', 1),
+(1, 'EmQx8ou9MO', 1542724688, '::1', 'install/klaida.php', 'rimas', 'User-Agent: \'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36\'', 'http://localhost/rimasmm2/', 42),
+(1, 'OnFjXvR0zH', 1542724686, '::1', '', 'rimas', 'User-Agent: \'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36\'', 'Direct Link', 12),
+(1, 'RpgnBZbtiu', 1542810488, '::1', 'themes/material/plugins/bootstrap/css/bootstrap.css.map', 'rimas', 'User-Agent: \'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36\'', 'Direct Link', 21),
+(1, '45mUyprsxq', 1542724639, '::1', '', 'rimas', 'User-Agent: \'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36\'', 'Direct Link', 53);
 
 -- --------------------------------------------------------
 
